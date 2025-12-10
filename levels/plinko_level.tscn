@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://cyy8uc4m1fvy6"]
+[gd_scene load_steps=34 format=3 uid="uid://cyy8uc4m1fvy6"]
 
 [ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
 [ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
 [ext_resource type="PackedScene" uid="uid://skwohdfq4xw0" path="res://prefabs/wall_piece/wall_piece.tscn" id="2_ndf8e"]
 [ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_hhynp"]
+[ext_resource type="Script" uid="uid://6xm0ovoete4r" path="res://levels/TickTimer.cs" id="3_vs5sp"]
 [ext_resource type="PackedScene" uid="uid://cdygi6j0dadwx" path="res://prefabs/player/player.tscn" id="4_20e0n"]
 [ext_resource type="Script" uid="uid://ddicc7alf5dy8" path="res://prefabs/row/row1.gd" id="4_al8p8"]
 [ext_resource type="PackedScene" uid="uid://byfflpg32m2op" path="res://prefabs/bucket/bucket.tscn" id="4_o0fae"]
@@ -49,7 +50,7 @@ PlayerScene = ExtResource("4_20e0n")
 PlayerDisks = NodePath("PlayerDisks")
 GameCamera = NodePath("Camera2D")
 FirstPlayer = NodePath("PlayerDisks/Player")
-metadata/_edit_horizontal_guides_ = [-391.0]
+metadata/_edit_horizontal_guides_ = [-391.0, 33.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(313, 425)
@@ -58,9 +59,9 @@ position = Vector2(313, 425)
 
 [node name="ScoreValue" type="Label" parent="CanvasLayer"]
 offset_left = 64.0
-offset_top = 22.0
+offset_top = 21.0
 offset_right = 125.0
-offset_bottom = 45.0
+offset_bottom = 44.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Score: 0"
@@ -71,13 +72,32 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -181.0
-offset_top = 16.0
+offset_top = 20.0
 offset_right = -16.0
-offset_bottom = 39.0
+offset_bottom = 43.0
 grow_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Left Click to Respawn"
+
+[node name="ScoreValue2" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("TimerLabel", "CountdownTimer")]
+offset_left = 269.0
+offset_top = 21.0
+offset_right = 348.0
+offset_bottom = 44.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+script = ExtResource("3_vs5sp")
+TimerLabel = NodePath("Label")
+CountdownTimer = NodePath("GameTimer")
+metadata/_edit_use_anchors_ = true
+
+[node name="GameTimer" type="Timer" parent="CanvasLayer/ScoreValue2"]
+
+[node name="Label" type="Label" parent="CanvasLayer/ScoreValue2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Pegs" type="Node2D" parent="."]
 

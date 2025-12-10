@@ -37,7 +37,9 @@ public partial class PlinkoLevel : Node2D
 		RespawnMessage.Hide();
 
 		InitialPosition = FirstPlayer.Position;
-	}
+
+        
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -82,4 +84,7 @@ public partial class PlinkoLevel : Node2D
 		//SpawnNewPlayer();
 		//CallDeferred("SpawnNewPlayer");
 	}
+    
+
+
 }
