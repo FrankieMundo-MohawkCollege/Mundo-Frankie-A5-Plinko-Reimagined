@@ -1,11 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyy8uc4m1fvy6"]
+[gd_scene load_steps=17 format=3 uid="uid://cyy8uc4m1fvy6"]
 
 [ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
 [ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
 [ext_resource type="PackedScene" uid="uid://skwohdfq4xw0" path="res://prefabs/wall_piece/wall_piece.tscn" id="2_ndf8e"]
 [ext_resource type="Script" uid="uid://dxvjrvhwkml4f" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_hhynp"]
 [ext_resource type="PackedScene" uid="uid://cdygi6j0dadwx" path="res://prefabs/player/player.tscn" id="4_20e0n"]
+[ext_resource type="Script" uid="uid://ddicc7alf5dy8" path="res://prefabs/row/row1.gd" id="4_al8p8"]
 [ext_resource type="PackedScene" uid="uid://byfflpg32m2op" path="res://prefabs/bucket/bucket.tscn" id="4_o0fae"]
+[ext_resource type="Script" uid="uid://nnkdsq8bnafq" path="res://prefabs/row/row2.gd" id="5_r2c0j"]
+[ext_resource type="Script" uid="uid://2hfgbqoegajw" path="res://prefabs/row/row3.gd" id="6_ql3yk"]
+[ext_resource type="Script" uid="uid://dofu6ki7sdbfv" path="res://prefabs/row/row4.gd" id="7_hve32"]
+[ext_resource type="Script" uid="uid://bgdg071fyljyt" path="res://prefabs/row/row5.gd" id="8_exmio"]
+[ext_resource type="Script" uid="uid://c7odfds265ogk" path="res://prefabs/row/row6.gd" id="9_ybmbn"]
+[ext_resource type="Script" uid="uid://n7dirgl2vscg" path="res://prefabs/row/row7.gd" id="10_fcklk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_20e0n"]
 bounce = 0.36
@@ -18,6 +25,7 @@ size = Vector2(650, 20)
 size = Vector2(20, 140)
 
 [node name="PlinkoLevel" type="Node2D" node_paths=PackedStringArray("ScoreValue", "RespawnMessage", "PlayerDisks", "GameCamera", "FirstPlayer")]
+position = Vector2(0, -31)
 script = ExtResource("1_lxrb4")
 ScoreValue = NodePath("CanvasLayer/ScoreValue")
 RespawnMessage = NodePath("CanvasLayer/RespawnMessage")
@@ -32,13 +40,14 @@ position = Vector2(313, 425)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScoreValue" type="Label" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 64.0
-offset_bottom = 39.0
+offset_left = 64.0
+offset_top = 22.0
+offset_right = 125.0
+offset_bottom = 45.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Score: 0"
+metadata/_edit_use_anchors_ = true
 
 [node name="RespawnMessage" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
@@ -57,24 +66,31 @@ text = "Left Click to Respawn"
 
 [node name="Row1" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(55, 256)
+script = ExtResource("4_al8p8")
 
 [node name="Row2" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(87, 320)
+script = ExtResource("5_r2c0j")
 
 [node name="Row3" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(55, 384)
+script = ExtResource("6_ql3yk")
 
 [node name="Row4" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(87, 448)
+script = ExtResource("7_hve32")
 
 [node name="Row5" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(55, 512)
+script = ExtResource("8_exmio")
 
 [node name="Row6" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(87, 576)
+script = ExtResource("9_ybmbn")
 
 [node name="Row7" parent="Pegs" instance=ExtResource("1_ahvb8")]
 position = Vector2(55, 640)
+script = ExtResource("10_fcklk")
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -82,88 +98,76 @@ position = Vector2(55, 640)
 position = Vector2(0, 256)
 
 [node name="WallPiece" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
-rotation = 0.7853982
+position = Vector2(0, 91.999985)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece2" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 128)
-rotation = 0.7853982
+position = Vector2(0, 192)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece3" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 256)
-rotation = 0.7853982
+position = Vector2(0, 291.99997)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece4" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 384)
-rotation = 0.7853982
+position = Vector2(0, 392)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="VerticalWall3" type="Node2D" parent="Walls"]
 position = Vector2(0, -264)
 
 [node name="WallPiece" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
-rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(-5.9604645e-08, 211.99997)
+scale = Vector2(0.99999994, 6.1462584)
 
 [node name="WallPiece2" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 128)
-rotation = 0.7853982
+position = Vector2(0, 312)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece3" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 256)
-rotation = 0.7853982
+position = Vector2(0, 412)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece4" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 384)
-rotation = 0.7853982
+position = Vector2(0, 512)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="VerticalWall2" type="Node2D" parent="Walls"]
 position = Vector2(624, 256)
 
 [node name="WallPiece" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
-rotation = 0.7853982
+position = Vector2(0, 92)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece2" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 128)
-rotation = 0.7853982
+position = Vector2(0, 192)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece3" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 256)
-rotation = 0.7853982
+position = Vector2(0, 292)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece4" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 384)
-rotation = 0.7853982
+position = Vector2(0, 392)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="VerticalWall4" type="Node2D" parent="Walls"]
 position = Vector2(624, -264)
 
 [node name="WallPiece" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
-rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(0, 209.99997)
+scale = Vector2(0.99999994, 5.944535)
 
 [node name="WallPiece2" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 128)
-rotation = 0.7853982
+position = Vector2(0, 312)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece3" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 256)
-rotation = 0.7853982
+position = Vector2(0, 412)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="WallPiece4" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 384)
-rotation = 0.7853982
+position = Vector2(0, 512)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="BottomRegion" type="Node2D" parent="."]
