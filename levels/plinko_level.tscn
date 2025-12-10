@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyy8uc4m1fvy6"]
+[gd_scene load_steps=33 format=3 uid="uid://cyy8uc4m1fvy6"]
 
 [ext_resource type="PackedScene" uid="uid://ca3o3a5grroel" path="res://prefabs/row/row.tscn" id="1_ahvb8"]
 [ext_resource type="Script" uid="uid://c6ids5c1qtj8g" path="res://levels/PlinkoLevel.cs" id="1_lxrb4"]
@@ -13,6 +13,22 @@
 [ext_resource type="Script" uid="uid://bgdg071fyljyt" path="res://prefabs/row/row5.gd" id="8_exmio"]
 [ext_resource type="Script" uid="uid://c7odfds265ogk" path="res://prefabs/row/row6.gd" id="9_ybmbn"]
 [ext_resource type="Script" uid="uid://n7dirgl2vscg" path="res://prefabs/row/row7.gd" id="10_fcklk"]
+[ext_resource type="Script" uid="uid://djd7pvdkwl0vn" path="res://prefabs/wall_piece/wall_piece1.gd" id="12_2wy0t"]
+[ext_resource type="Script" uid="uid://bx82uqcq3hyv8" path="res://prefabs/wall_piece/wall_piece2.gd" id="13_lfvk6"]
+[ext_resource type="Script" uid="uid://wi6xvkmmck4p" path="res://prefabs/wall_piece/wall_piece3.gd" id="14_wj5w6"]
+[ext_resource type="Script" uid="uid://b1j67odur288w" path="res://prefabs/wall_piece/wall_piece4.gd" id="15_m4b7w"]
+[ext_resource type="Script" uid="uid://c6taaowmqulyk" path="res://prefabs/wall_piece/wall_piece5.gd" id="16_wj5w6"]
+[ext_resource type="Script" uid="uid://cbb6eqpu0xwod" path="res://prefabs/wall_piece/wall_piece6.gd" id="17_m4b7w"]
+[ext_resource type="Script" uid="uid://b8nukf5punmhh" path="res://prefabs/wall_piece/wall_piece7.gd" id="18_6k2ua"]
+[ext_resource type="Script" uid="uid://dwduw5o13jpc5" path="res://prefabs/wall_piece/wall_piece8.gd" id="19_6g65e"]
+[ext_resource type="Script" uid="uid://bstamk102smec" path="res://prefabs/wall_piece/wall_piece9.gd" id="20_gw6f2"]
+[ext_resource type="Script" uid="uid://bgxkur8a15y2a" path="res://prefabs/wall_piece/wall_piece10.gd" id="21_4hb0q"]
+[ext_resource type="Script" uid="uid://dsu7skomhwwvp" path="res://prefabs/wall_piece/wall_piece11.gd" id="22_fka1d"]
+[ext_resource type="Script" uid="uid://dxope51figxvj" path="res://prefabs/wall_piece/wall_piece12.gd" id="23_gwayv"]
+[ext_resource type="Script" uid="uid://cosvlg6pchw74" path="res://prefabs/wall_piece/wall_piece13.gd" id="24_lubj2"]
+[ext_resource type="Script" uid="uid://g3r6dxdbnl7t" path="res://prefabs/wall_piece/wall_piece14.gd" id="25_gs2a6"]
+[ext_resource type="Script" uid="uid://de0433w8oxny0" path="res://prefabs/wall_piece/wall_piece15.gd" id="26_d8q8r"]
+[ext_resource type="Script" uid="uid://dvc772eocwqg2" path="res://prefabs/wall_piece/wall_piece16.gd" id="27_3bdpw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_20e0n"]
 bounce = 0.36
@@ -33,6 +49,7 @@ PlayerScene = ExtResource("4_20e0n")
 PlayerDisks = NodePath("PlayerDisks")
 GameCamera = NodePath("Camera2D")
 FirstPlayer = NodePath("PlayerDisks/Player")
+metadata/_edit_horizontal_guides_ = [-391.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(313, 425)
@@ -100,18 +117,22 @@ position = Vector2(0, 256)
 [node name="WallPiece" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 91.999985)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("12_2wy0t")
 
 [node name="WallPiece2" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 192)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("13_lfvk6")
 
 [node name="WallPiece3" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 291.99997)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("14_wj5w6")
 
 [node name="WallPiece4" parent="Walls/VerticalWall1" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 392)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("15_m4b7w")
 
 [node name="VerticalWall3" type="Node2D" parent="Walls"]
 position = Vector2(0, -264)
@@ -119,18 +140,22 @@ position = Vector2(0, -264)
 [node name="WallPiece" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
 position = Vector2(-5.9604645e-08, 211.99997)
 scale = Vector2(0.99999994, 6.1462584)
+script = ExtResource("16_wj5w6")
 
 [node name="WallPiece2" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 312)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("17_m4b7w")
 
 [node name="WallPiece3" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 412)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("18_6k2ua")
 
 [node name="WallPiece4" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 512)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("19_6g65e")
 
 [node name="VerticalWall2" type="Node2D" parent="Walls"]
 position = Vector2(624, 256)
@@ -138,37 +163,45 @@ position = Vector2(624, 256)
 [node name="WallPiece" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 92)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("20_gw6f2")
 
 [node name="WallPiece2" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 192)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("21_4hb0q")
 
 [node name="WallPiece3" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 292)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("22_fka1d")
 
 [node name="WallPiece4" parent="Walls/VerticalWall2" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 392)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("23_gwayv")
 
 [node name="VerticalWall4" type="Node2D" parent="Walls"]
 position = Vector2(624, -264)
 
 [node name="WallPiece" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 209.99997)
-scale = Vector2(0.99999994, 5.944535)
+scale = Vector2(0.99999994, 6.1144533)
+script = ExtResource("24_lubj2")
 
 [node name="WallPiece2" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 312)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("25_gs2a6")
 
 [node name="WallPiece3" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 412)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("26_d8q8r")
 
 [node name="WallPiece4" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
 position = Vector2(0, 512)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("27_3bdpw")
 
 [node name="BottomRegion" type="Node2D" parent="."]
 
