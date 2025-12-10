@@ -3,26 +3,68 @@
 [ext_resource type="PackedScene" uid="uid://bg32xjkrgnuqo" path="res://prefabs/peg/peg.tscn" id="1_pugkt"]
 
 [node name="Row" type="Node2D"]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 
 [node name="Peg" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
+self_modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Peg"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
 
 [node name="Peg2" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 position = Vector2(64, 0)
 
+[node name="Polygon2D" type="Polygon2D" parent="Peg2"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
+
 [node name="Peg3" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 position = Vector2(128, 0)
 
+[node name="Polygon2D" type="Polygon2D" parent="Peg3"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
+
 [node name="Peg4" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 position = Vector2(192, 0)
 
+[node name="Polygon2D" type="Polygon2D" parent="Peg4"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
+
 [node name="Peg5" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 position = Vector2(256, 0)
 
+[node name="Polygon2D" type="Polygon2D" parent="Peg5"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
+
 [node name="Peg6" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 position = Vector2(320, 0)
 
+[node name="Polygon2D" type="Polygon2D" parent="Peg6"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
+
 [node name="Peg7" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 position = Vector2(384, 0)
 
+[node name="Polygon2D" type="Polygon2D" parent="Peg7"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
+
 [node name="Peg8" parent="." instance=ExtResource("1_pugkt")]
+modulate = Color(0.80784315, 0.15686275, 0.21568628, 1)
 position = Vector2(448, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="Peg8"]
+color = Color(0.80784315, 0.15686275, 0.21568628, 1)
+polygon = PackedVector2Array(0, -5, 1, -5, 3, -4, 4, -3, 5, -1, 5, 1, 4, 3, 3, 4, 1, 5, -1, 5, -3, 4, -4, 3, -5, 1, -5, -1, -4, -3, -3, -4, -1, -5)
