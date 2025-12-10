@@ -138,7 +138,7 @@ script = ExtResource("15_m4b7w")
 position = Vector2(0, -264)
 
 [node name="WallPiece" parent="Walls/VerticalWall3" instance=ExtResource("2_ndf8e")]
-position = Vector2(-5.9604645e-08, 211.99997)
+position = Vector2(7.152558e-07, -46)
 scale = Vector2(0.99999994, 6.1462584)
 script = ExtResource("16_wj5w6")
 
@@ -184,7 +184,7 @@ script = ExtResource("23_gwayv")
 position = Vector2(624, -264)
 
 [node name="WallPiece" parent="Walls/VerticalWall4" instance=ExtResource("2_ndf8e")]
-position = Vector2(0, 209.99997)
+position = Vector2(0, -44)
 scale = Vector2(0.99999994, 6.1144533)
 script = ExtResource("24_lubj2")
 
@@ -244,10 +244,8 @@ metadata/_custom_type_script = "uid://dxvjrvhwkml4f"
 
 [node name="ScoreBuckets" type="Node2D" parent="."]
 
-[node name="Bucket" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
+[node name="Bucket" parent="ScoreBuckets" instance=ExtResource("4_o0fae")]
 position = Vector2(40, 784)
-BucketScore = 100
-PlinkoLevelNode = NodePath("../..")
 
 [node name="Bucket2" parent="ScoreBuckets" node_paths=PackedStringArray("PlinkoLevelNode") instance=ExtResource("4_o0fae")]
 position = Vector2(128, 784)
@@ -282,5 +280,5 @@ PlinkoLevelNode = NodePath("../..")
 [node name="PlayerDisks" type="Node2D" parent="."]
 
 [node name="Player" parent="PlayerDisks" node_paths=PackedStringArray("GameCamera") instance=ExtResource("4_20e0n")]
-position = Vector2(302, -529)
+position = Vector2(331, -830)
 GameCamera = NodePath("../../Camera2D")

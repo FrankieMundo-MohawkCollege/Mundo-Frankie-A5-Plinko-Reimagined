@@ -41,4 +41,24 @@ public partial class Bucket : Area2D
     public override void _Process(double delta)
 	{
 	}
+
+    public partial class BucketMover : Node2D
+    {
+        [Export] public float MoveRange = 20f;
+        [Export] public float Speed = 2f;
+
+        private float _startX;
+
+        public override void _Ready()
+        {
+            _startX = Position.X;
+        }
+
+        public override void _Process(double delta)
+        {
+            float time = (float)Time.GetTicksMsec() / 500f;
+            float offset = Mathf.Sin(time * Speed) * MoveRange;
+            Position = new Vector2(_startX + offset, Position.Y);
+        }
+    }
 }
